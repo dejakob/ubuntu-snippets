@@ -1,0 +1,14 @@
+git clone https://github.com/nodejs/node
+cd node
+./configure
+make
+cd out/Release/
+rm -rf /usr/bin/node
+rm -rf /usr/bin/nodejs
+rm -rf /usr/bin/node-gyp
+apt-get remove node
+apt-get remove nodejs
+chmod +x node
+cd /usr/bin
+ln -s PATH_WHERE_NODE_WAS_CLONED/out/Release/node node
+node -v
